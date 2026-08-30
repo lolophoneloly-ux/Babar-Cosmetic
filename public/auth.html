@@ -117,6 +117,104 @@
     color: rgba(251,243,236,0.55);
   }
   .auth-back:hover { color: var(--gold-light); }
+
+  /* ===== Girl-pulling-card illustration ===== */
+  .auth-scene {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0;
+    max-width: 920px;
+    width: 100%;
+  }
+  .auth-illustration {
+    width: clamp(170px, 23vw, 260px);
+    height: auto;
+    flex-shrink: 0;
+    margin-right: clamp(-24px, -2.5vw, -8px);
+    margin-bottom: 18px;
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,0.28));
+    animation: girlBob 1.1s cubic-bezier(.45,0,.55,1) infinite;
+  }
+  @media (max-width: 880px) {
+    .auth-scene { flex-direction: column; align-items: center; gap: 2px; }
+    .auth-illustration { width: 150px; margin: 0; }
+    .rope { display: none; }
+  }
+
+  .thigh-back, .thigh-front, .arm-back, .arm-front, .ponytail, .shadow-ellipse {
+    transform-box: fill-box;
+    transform-origin: 50% 0%;
+  }
+  .shin-back, .shin-front { transform-box: fill-box; transform-origin: 50% 0%; }
+
+  .thigh-back  { animation: thighBack 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .thigh-front { animation: thighFront 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .shin-back   { animation: shinBack 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .shin-front  { animation: shinFront 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .arm-front   { animation: thighFront 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .arm-back    { animation: armPull 0.55s ease-in-out infinite; }
+  .ponytail    { animation: ponytailSway 1.1s ease-in-out infinite; }
+  .rope        { animation: ropePull 0.6s linear infinite; }
+  .shadow-ellipse { animation: shadowPulse 1.1s cubic-bezier(.45,0,.55,1) infinite; }
+  .dust-1 { transform-box: fill-box; transform-origin: 50% 50%; animation: dustPuff 1.1s ease-out infinite; }
+  .dust-2 { transform-box: fill-box; transform-origin: 50% 50%; animation: dustPuff 1.1s ease-out infinite 0.55s; }
+
+  @keyframes girlBob {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-6px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-6px); }
+  }
+  @keyframes thighBack {
+    0%, 100% { transform: rotate(22deg); }
+    50% { transform: rotate(-24deg); }
+  }
+  @keyframes thighFront {
+    0%, 100% { transform: rotate(-24deg); }
+    50% { transform: rotate(22deg); }
+  }
+  @keyframes shinBack {
+    0%, 100% { transform: rotate(-18deg); }
+    30% { transform: rotate(-4deg); }
+    50% { transform: rotate(28deg); }
+    80% { transform: rotate(-4deg); }
+  }
+  @keyframes shinFront {
+    0%, 100% { transform: rotate(28deg); }
+    30% { transform: rotate(-4deg); }
+    50% { transform: rotate(-18deg); }
+    80% { transform: rotate(-4deg); }
+  }
+  @keyframes armPull {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(5deg); }
+  }
+  @keyframes ponytailSway {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(10deg); }
+  }
+  @keyframes shadowPulse {
+    0%, 100% { transform: scaleX(1); opacity: 0.35; }
+    50% { transform: scaleX(0.82); opacity: 0.22; }
+  }
+  @keyframes ropePull {
+    0% { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes dustPuff {
+    0% { opacity: 0; transform: scale(0.4) translateY(0); }
+    25% { opacity: 0.5; }
+    100% { opacity: 0; transform: scale(1.3) translateY(-10px); }
+  }
+  @keyframes cardDragIn {
+    0% { transform: translateX(80px) rotate(-2deg); opacity: 0; }
+    55% { transform: translateX(-10px) rotate(1deg); opacity: 1; }
+    100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+  }
+  .auth-card { animation: cardDragIn 1s cubic-bezier(.34,1.56,.64,1) both; }
 </style>
 </head>
 <body>
@@ -124,6 +222,85 @@
 <div class="auth-page">
   <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
   <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
+
+  <div class="auth-scene">
+    <svg class="auth-illustration" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <ellipse class="shadow-ellipse" cx="128" cy="326" rx="62" ry="9" fill="#2A0712"/>
+
+      <g class="dust dust-1"><circle cx="52" cy="306" r="6" fill="rgba(251,243,236,0.45)"/></g>
+      <g class="dust dust-2"><circle cx="34" cy="313" r="4" fill="rgba(251,243,236,0.32)"/></g>
+
+      <!-- back leg -->
+      <g class="thigh-back">
+        <path d="M120 246 L134 246 L127 288 L115 288 Z" fill="#3B0918"/>
+        <g class="shin-back">
+          <ellipse cx="121" cy="303" rx="15" ry="7.5" fill="#E4C77A"/>
+          <rect x="116" y="286" width="11" height="16" rx="4" fill="#3B0918"/>
+        </g>
+      </g>
+
+      <!-- front leg -->
+      <g class="thigh-front">
+        <path d="M132 246 L146 246 L153 288 L139 288 Z" fill="#55102A"/>
+        <g class="shin-front">
+          <ellipse cx="149" cy="303" rx="15" ry="7.5" fill="#C9A227"/>
+          <rect x="140" y="286" width="11" height="16" rx="4" fill="#55102A"/>
+        </g>
+      </g>
+
+      <!-- dress -->
+      <path d="M104 150 Q130 135 156 150 L166 247 Q130 264 94 247 Z" fill="url(#dressGrad)"/>
+      <path d="M99 190 Q130 202 161 190" stroke="url(#beltGrad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+      <!-- front arm (swings) -->
+      <g class="arm-front">
+        <path d="M108 163 Q90 186 84 214" stroke="#F0C9A0" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <circle cx="84" cy="216" r="7" fill="#F0C9A0"/>
+      </g>
+
+      <!-- back arm (grips rope) -->
+      <g class="arm-back">
+        <path d="M152 163 Q178 174 195 194" stroke="#F0C9A0" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <circle cx="196" cy="196" r="7.5" fill="#F0C9A0"/>
+      </g>
+
+      <!-- ponytail (behind head, drawn first for layering then head on top) -->
+      <g class="ponytail">
+        <path d="M148 100 Q178 108 176 145 Q172 172 152 178 Q168 148 160 120 Q156 106 148 100 Z" fill="url(#hairGrad)"/>
+      </g>
+
+      <!-- head -->
+      <circle cx="130" cy="120" r="27" fill="#F0C9A0"/>
+      <ellipse cx="115" cy="132" rx="6" ry="4" fill="#E9A9A0" opacity="0.55"/>
+      <ellipse cx="145" cy="132" rx="6" ry="4" fill="#E9A9A0" opacity="0.55"/>
+      <path d="M102 116 Q98 82 130 79 Q162 82 158 116 Q159 96 130 94 Q101 96 102 116 Z" fill="url(#hairGrad)"/>
+      <circle cx="121" cy="122" r="2.2" fill="#2A0712"/>
+      <circle cx="139" cy="122" r="2.2" fill="#2A0712"/>
+      <path d="M121 133 Q130 139 139 133" stroke="#2A0712" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+      <!-- rope from hand to card -->
+      <path class="rope" d="M196 196 Q228 189 260 170" stroke="url(#ropeGrad)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-dasharray="7 7"/>
+
+      <defs>
+        <linearGradient id="dressGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#832243"/>
+          <stop offset="100%" stop-color="#3B0918"/>
+        </linearGradient>
+        <linearGradient id="hairGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#E4C77A"/>
+          <stop offset="100%" stop-color="#B78D22"/>
+        </linearGradient>
+        <linearGradient id="beltGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#B78D22"/>
+          <stop offset="50%" stop-color="#E4C77A"/>
+          <stop offset="100%" stop-color="#B78D22"/>
+        </linearGradient>
+        <linearGradient id="ropeGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#B78D22"/>
+          <stop offset="100%" stop-color="#E4C77A"/>
+        </linearGradient>
+      </defs>
+    </svg>
 
   <div class="auth-card">
     <div class="auth-card__logo">
@@ -173,6 +350,7 @@
     </form>
 
     <a href="/" class="auth-back">← Back to home</a>
+  </div>
   </div>
 </div>
 
