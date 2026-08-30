@@ -1,13 +1,16 @@
 [
   {
-    "id": "p1",
-    "name": "Velvet Wine Matte Lipstick",
-    "category": "Lips",
-    "price": 1490,
-    "currency": "PKR",
-    "shade": "#7A1F3D",
-    "tagline": "One swipe, full pigment, zero fade.",
-    "badge": "Bestseller"
+  "id": "p1",
+  "name": "Velvet Wine Matte Lipstick",
+  "category": "Lips",
+  "price": 1490,
+  "currency": "PKR",
+  "shade": "#7A1F3D",
+  "image": "/images/lipstick-1.jpg",
+  "tagline": "One swipe, full pigment, zero fade.",
+  "badge": "Bestseller"
+},
+    
   },
   {
     "id": "p2",
