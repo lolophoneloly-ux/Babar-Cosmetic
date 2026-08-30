@@ -9,8 +9,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css" />
+<style>html:not(.authed) body { visibility: hidden; }</style>
 </head>
 <body>
+<script>
+  // Auth gate: check session before showing the site.
+  fetch('/api/auth/me', { credentials: 'same-origin' })
+    .then((r) => {
+      if (!r.ok) {
+        window.location.replace('/auth.html?redirect=' + encodeURIComponent(location.pathname));
+        return null;
+      }
+      return r.json();
+    })
+    .then((data) => {
+      if (data && data.user) {
+        window.__currentUser = data.user;
+      }
+      document.documentElement.classList.add('authed');
+      document.dispatchEvent(new CustomEvent('user-ready'));
+    })
+    .catch(() => {
+      // If the auth check itself fails (e.g. offline), don't trap the user.
+      document.documentElement.classList.add('authed');
+    });
+</script>
 
 <!-- ===== Custom cursor glow (desktop only, CSS handles hiding on touch) ===== -->
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -28,6 +51,7 @@
       <a href="#why">Why Us</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="nav__account" id="navAccount"></div>
     <a href="#shop" class="btn btn--gold nav__cta">Shop Collection</a>
     <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>

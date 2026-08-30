@@ -4,6 +4,34 @@
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* ---------- Account area (login/signup or logged-in user) ---------- */
+function renderAccountArea() {
+  const el = document.getElementById('navAccount');
+  if (!el) return;
+  const user = window.__currentUser;
+
+  if (user) {
+    const firstName = (user.name || '').split(' ')[0] || 'Account';
+    el.innerHTML = `
+      <span>Hi, ${firstName}</span>
+      <span class="divider">·</span>
+      <button type="button" class="link-btn" id="logoutBtn">Logout</button>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
+      window.location.href = '/auth.html';
+    });
+  } else {
+    el.innerHTML = `<a href="/auth.html">Login / Sign Up</a>`;
+  }
+}
+
+if (window.__currentUser) {
+  renderAccountArea();
+} else {
+  document.addEventListener('user-ready', renderAccountArea);
+}
+
 /* ---------- Navbar scroll state ---------- */
 const nav = document.getElementById('siteNav');
 const onScroll = () => {

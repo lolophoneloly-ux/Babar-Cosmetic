@@ -14,9 +14,11 @@ babar-cosmetics/
 ├── data/
 │   ├── products.json      ← Products ki list (yahan se edit karein)
 │   ├── contacts.json      ← Contact form submissions yahan save hoti hain
-│   └── subscribers.json   ← Newsletter emails yahan save hoti hain
+│   ├── subscribers.json   ← Newsletter emails yahan save hoti hain
+│   └── users.json         ← Signup/login accounts (password hashed save hota hai)
 └── public/                ← Frontend
     ├── index.html
+    ├── auth.html           ← Signup / Login page
     ├── css/style.css
     └── js/main.js
 ```
@@ -52,6 +54,23 @@ modules use karta hai.
   mein save hota hai
 - Fully responsive (mobile, tablet, desktop) + keyboard-accessible +
   reduced-motion respect
+
+## Signup / Login system
+
+- Website ab **login ke bina nahi khulti** — pehli baar koi visit kare to
+  `auth.html` (Sign Up / Login) page pe bhej diya jata hai.
+- Passwords **kabhi bhi plain text mein save nahi hote** — built-in Node
+  `crypto` module se secure hash (salt + scrypt) ban ke `data/users.json`
+  mein jaate hain.
+- Login hone ke baad ek secure session cookie set hoti hai (30 din tak
+  valid) — dobara visit pe auto-login rehta hai jab tak "Logout" na dabayein.
+- Nav bar mein upar-right "Hi, `<Naam>` · Logout" dikhta hai jab koi login
+  ho, warna "Login / Sign Up" link dikhta hai.
+
+**Note:** Sessions server ki memory mein rakhi jaati hain — agar hosting
+(Render/Railway) pe server restart/redeploy ho, to sab logged-in users ko
+dobara login karna padega (yeh normal hai, koi data loss nahi hota — sirf
+session reset hoti hai).
 
 ## Customize karna
 

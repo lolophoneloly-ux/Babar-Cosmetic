@@ -212,6 +212,29 @@ button { font: inherit; cursor: pointer; }
 }
 .nav__links a:hover::after { right: 0; }
 
+.nav__account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.nav:not(.is-scrolled) .nav__account { color: var(--ivory); }
+.nav__account a, .nav__account button.link-btn {
+  color: inherit;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+.nav__account a:hover, .nav__account button.link-btn:hover { color: var(--gold); }
+.nav:not(.is-scrolled) .nav__account a:hover,
+.nav:not(.is-scrolled) .nav__account button.link-btn:hover { color: var(--gold-light); }
+.nav__account .divider { opacity: 0.4; }
+
 .nav__burger {
   display: none;
   flex-direction: column;
