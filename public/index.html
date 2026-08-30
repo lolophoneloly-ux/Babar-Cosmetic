@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Babar Cosmetics — Beauty, Undiluted.</title>
+<meta name="description" content="Babar Cosmetics — clean-formula color cosmetics crafted in Pakistan. Founded by Ahmad Hassan Babar." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<!-- ===== Custom cursor glow (desktop only, CSS handles hiding on touch) ===== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ===== Navbar ===== -->
+<header class="nav" id="siteNav">
+  <div class="nav__inner">
+    <a href="#home" class="nav__logo">
+      <span class="nav__logo-main">Babar</span>
+      <span class="nav__logo-sub">COSMETICS</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#shop" class="btn btn--gold nav__cta">Shop Collection</a>
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="eyebrow reveal" data-reveal>EST. IN PAKISTAN</p>
+
+    <h1 class="hero__title">
+      <span class="reveal-line"><span class="reveal-word">Beauty,</span></span>
+      <span class="reveal-line hero__swipe-wrap">
+        <span class="reveal-word hero__swipe-text">Undiluted.</span>
+        <span class="hero__swipe-bar" aria-hidden="true"></span>
+      </span>
+    </h1>
+
+    <p class="hero__sub reveal" data-reveal>
+      Clean-formula color cosmetics, small-batch made — for skin that wants to breathe
+      and pigment that doesn't quit.
+    </p>
+
+    <div class="hero__ctas reveal" data-reveal>
+      <a href="#shop" class="btn btn--gold">Explore Bestsellers</a>
+      <a href="#story" class="btn btn--ghost">Our Story ↓</a>
+    </div>
+  </div>
+
+  <div class="hero__swatches" aria-hidden="true">
+    <span class="swatch-dot" style="--c:#7A1F3D"></span>
+    <span class="swatch-dot" style="--c:#D4AF7A"></span>
+    <span class="swatch-dot" style="--c:#C97064"></span>
+    <span class="swatch-dot" style="--c:#141014"></span>
+    <span class="swatch-dot" style="--c:#8A4B2E"></span>
+  </div>
+
+  <a href="#shop" class="hero__scroll" aria-label="Scroll to shop">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===== Marquee strip ===== -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span>CRUELTY-FREE</span><span class="dot">·</span>
+    <span>DERMATOLOGIST TESTED</span><span class="dot">·</span>
+    <span>MADE IN PAKISTAN</span><span class="dot">·</span>
+    <span>SMALL-BATCH FORMULAS</span><span class="dot">·</span>
+    <span>NO FILLERS</span><span class="dot">·</span>
+    <span>CRUELTY-FREE</span><span class="dot">·</span>
+    <span>DERMATOLOGIST TESTED</span><span class="dot">·</span>
+    <span>MADE IN PAKISTAN</span><span class="dot">·</span>
+    <span>SMALL-BATCH FORMULAS</span><span class="dot">·</span>
+    <span>NO FILLERS</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ===== Shop / Bestsellers ===== -->
+<section class="section shop" id="shop">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>BESTSELLERS</p>
+    <h2 class="section-title reveal" data-reveal>The Edit</h2>
+    <p class="section-sub reveal" data-reveal>Six shades our customers reach for first.</p>
+
+    <div class="product-grid" id="productGrid">
+      <!-- product cards injected by js/main.js from /api/products -->
+      <div class="product-skeleton"></div>
+      <div class="product-skeleton"></div>
+      <div class="product-skeleton"></div>
+      <div class="product-skeleton"></div>
+      <div class="product-skeleton"></div>
+      <div class="product-skeleton"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="section story" id="story">
+  <div class="container story__grid">
+    <div class="story__visual reveal" data-reveal aria-hidden="true">
+      <div class="stack">
+        <div class="stack__pan" style="--c:#7A1F3D; --r:-6deg"></div>
+        <div class="stack__pan" style="--c:#D4AF7A; --r:4deg"></div>
+        <div class="stack__pan" style="--c:#C97064; --r:-2deg"></div>
+      </div>
+    </div>
+    <div class="story__text">
+      <p class="eyebrow reveal" data-reveal>OUR STORY</p>
+      <h2 class="section-title reveal" data-reveal>Started in a small studio. Built on one idea.</h2>
+      <p class="reveal" data-reveal>
+        Babar Cosmetics was founded by <strong>Ahmad Hassan Babar</strong>, who started out
+        mixing shades on a kitchen table and testing them on family before anyone else.
+        The idea was simple: pigment that performs like the luxury brands, without the
+        heavy, pore-clogging formulas that come with them.
+      </p>
+      <p class="reveal" data-reveal>
+        Every product is still made in small batches, tested on real skin tones, and
+        signed off personally before it ships. That's the part of the process we've
+        refused to scale away.
+      </p>
+      <a href="#contact" class="btn btn--dark reveal" data-reveal>Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Us ===== -->
+<section class="section why" id="why">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>WHY BABAR</p>
+    <h2 class="section-title reveal" data-reveal>What we don't compromise on</h2>
+
+    <div class="why-grid">
+      <div class="why-card reveal" data-reveal>
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4c8 6 14 12 14 21a14 14 0 1 1-28 0C10 16 16 10 24 4Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Clean Formulas</h3>
+        <p>No parabens, no sulfates, no filler ingredients — just what the shade actually needs.</p>
+      </div>
+      <div class="why-card reveal" data-reveal>
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="7" fill="currentColor"/></svg>
+        </div>
+        <h3>Shade Range Built for Us</h3>
+        <p>Every shade is tested across South Asian skin tones first, not adapted last.</p>
+      </div>
+      <div class="why-card reveal" data-reveal>
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Small-Batch Quality</h3>
+        <p>We cap batch sizes so every unit gets checked, not just sampled.</p>
+      </div>
+      <div class="why-card reveal" data-reveal>
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 6 8 14v10c0 10 7 17.5 16 20 9-2.5 16-10 16-20V14L24 6Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Cruelty-Free, Always</h3>
+        <p>Never tested on animals — at any stage, in any market we sell in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="section testimonials">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>KIND WORDS</p>
+    <h2 class="section-title reveal" data-reveal>From people who wear it daily</h2>
+  </div>
+  <div class="t-marquee">
+    <div class="t-marquee__track">
+      <blockquote class="t-card"><p>"The Velvet Wine lipstick survives a full workday. That never happens."</p><cite>— Areeba K.</cite></blockquote>
+      <blockquote class="t-card"><p>"First foundation shade that's actually matched my undertone on try one."</p><cite>— Sana M.</cite></blockquote>
+      <blockquote class="t-card"><p>"Gold Dust highlighter without the glitter fallout. Finally."</p><cite>— Hira R.</cite></blockquote>
+      <blockquote class="t-card"><p>"You can tell it's small-batch — the pigment payoff is different."</p><cite>— Zainab A.</cite></blockquote>
+      <blockquote class="t-card"><p>"The Velvet Wine lipstick survives a full workday. That never happens."</p><cite>— Areeba K.</cite></blockquote>
+      <blockquote class="t-card"><p>"First foundation shade that's actually matched my undertone on try one."</p><cite>— Sana M.</cite></blockquote>
+      <blockquote class="t-card"><p>"Gold Dust highlighter without the glitter fallout. Finally."</p><cite>— Hira R.</cite></blockquote>
+      <blockquote class="t-card"><p>"You can tell it's small-batch — the pigment payoff is different."</p><cite>— Zainab A.</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact / Newsletter ===== -->
+<section class="section contact" id="contact">
+  <div class="hero__blob hero__blob--c" aria-hidden="true"></div>
+  <div class="container contact__grid">
+    <div>
+      <p class="eyebrow eyebrow--light reveal" data-reveal>STAY IN TOUCH</p>
+      <h2 class="section-title section-title--light reveal" data-reveal>Get first access to new shades</h2>
+      <p class="section-sub section-sub--light reveal" data-reveal>
+        Join the list for launch drops, restock alerts, and the occasional discount code.
+      </p>
+      <form class="newsletter-form reveal" data-reveal id="newsletterForm">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+      <p class="form-msg" id="newsletterMsg" role="status"></p>
+    </div>
+
+    <form class="contact-form reveal" data-reveal id="contactForm">
+      <h3>Send us a message</h3>
+      <label>
+        Name
+        <input type="text" name="name" required maxlength="200" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required maxlength="200" />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="4" required maxlength="2000"></textarea>
+      </label>
+      <button type="submit" class="btn btn--dark">Send Message</button>
+      <p class="form-msg" id="contactMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-main">Babar</span>
+        <span class="nav__logo-sub">COSMETICS</span>
+      </a>
+      <p>Clean-formula color cosmetics, made in Pakistan.</p>
+      <p class="footer__owner">Founded by <strong>Ahmad Hassan Babar</strong></p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Shop</h4>
+      <a href="#shop">Bestsellers</a>
+      <a href="#shop">New In</a>
+      <a href="#shop">All Products</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#story">Our Story</a>
+      <a href="#why">Why Babar</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Follow</h4>
+      <a href="#" rel="noopener">Instagram</a>
+      <a href="#" rel="noopener">Facebook</a>
+      <a href="#" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© <span id="year"></span> Babar Cosmetics. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p1",
+    "name": "Velvet Wine Matte Lipstick",
+    "category": "Lips",
+    "price": 1490,
+    "currency": "PKR",
+    "shade": "#7A1F3D",
+    "tagline": "One swipe, full pigment, zero fade.",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "p2",
+    "name": "Gold Dust Highlighter",
+    "category": "Face",
+    "price": 1990,
+    "currency": "PKR",
+    "shade": "#D4AF7A",
+    "tagline": "A lit-from-within glow, not glitter.",
+    "badge": "New"
+  },
+  {
+    "id": "p3",
+    "name": "Silk Veil Foundation",
+    "category": "Face",
+    "price": 2450,
+    "currency": "PKR",
+    "shade": "#E8C4A0",
+    "tagline": "Buildable coverage that breathes.",
+    "badge": ""
+  },
+  {
+    "id": "p4",
+    "name": "Rose Ember Blush",
+    "category": "Face",
+    "price": 1690,
+    "currency": "PKR",
+    "shade": "#C97064",
+    "tagline": "The flush of a good day, bottled.",
+    "badge": ""
+  },
+  {
+    "id": "p5",
+    "name": "Ink Line Eyeliner",
+    "category": "Eyes",
+    "price": 990,
+    "currency": "PKR",
+    "shade": "#141014",
+    "tagline": "Precision tip, twelve-hour hold.",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "p6",
+    "name": "Amber Nights Perfume Oil",
+    "category": "Fragrance",
+    "price": 2990,
+    "currency": "PKR",
+    "shade": "#8A4B2E",
+    "tagline": "Warm amber, soft musk, quiet confidence.",
+    "badge": "New"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "babar-cosmetics",
+  "version": "1.0.0",
+  "description": "Babar Cosmetics — full-stack website (Node.js backend + static frontend), founded by Ahmad Hassan Babar.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
